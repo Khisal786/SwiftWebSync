@@ -2,8 +2,8 @@
 title: "Swift Web Sync"
 email: "contact@swiftwebsync.com"
 description: "High-performance web development, mobile-first ordering systems, and digital growth agency scaling businesses across the US."
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://swiftwebsync.com" # the base hostname & protocol for your site
+baseurl: "/SwiftWebSync" # the subpath of your site, e.g. /blog
+url: "https://khisal786.github.io/" # the base hostname & protocol for your site
 
 # Author / Organization Entity Data (Optimized for AEO & GEO Schema)
 author:
