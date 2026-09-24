@@ -1,0 +1,91 @@
+---
+layout: default
+title: "Swift Web Sync | High-Performance Web Development & Mobile Menus"
+description: "We build lightning-fast mobile menus, table ordering systems, and high-conversion web apps for modern restaurants and local businesses. Tested live before you pay."
+---
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span> Zero Upfront Fees • Pre-Built Live Demos
+    </div>
+    <h1>Lightning-Fast Web Apps for <span>Modern Restaurants</span> & Saloons.</h1>
+    <p>We don't sell templates or pitch empty promises. My team builds your mobile menu and QR table-ordering system <strong>before</strong> you pay a single dime. You test it live on your phone first.</p>
+    
+    <div class="hero-cta-group">
+      <a href="#demos" class="btn-primary">Explore Live Demos</a>
+      <a href="#model" class="btn-secondary">How Our Model Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- DEMOS SHOWCASE SECTION (THE PROOF) -->
+<section id="demos" class="demos-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>See Our Craft in Action</h2>
+      <p>Explore three distinct, high-performance web systems we’ve engineered. Built with pure vanilla code, zero bloat, and fully optimized for mobile devices.</p>
+    </div>
+
+    <div class="demos-grid">
+      {% for demo in site.data.demos %}
+        {% include demo_card.html 
+           image=demo.image
+           tag=demo.tag
+           title=demo.title
+           description=demo.description
+           tech=demo.tech
+           status=demo.status
+        %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- THE RISK-REVERSAL MODEL SECTION -->
+<section id="model" class="model-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The "Pay Only If You Like It" Model</h2>
+      <p>Traditional agencies make you pay upfront for designs you can't visualize. We flip the script entirely.</p>
+    </div>
+
+    <div class="model-steps-grid">
+      <div class="step-card">
+        <span class="step-number">01</span>
+        <h3>We Build It First</h3>
+        <p>Using your actual menu items, branding, and local details, we assemble a complete, custom web app before any conversation about money occurs.</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">02</span>
+        <h3>Test It On Your Phone</h3>
+        <p>Your sales partner drops a live link directly to your phone. You scan the table QR code, test the cart flow, and experience the lightning speed firsthand.</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">03</span>
+        <h3>Zero Risk Decision</h3>
+        <p>If it doesn't fit your vision, you pay nothing and walk away. If you love how it elevates your business, we keep it live for a flat monthly fee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & CONVERSION SECTION -->
+<section id="contact" class="contact-section">
+  <div class="container contact-container">
+    <div class="contact-content">
+      <h2>Ready to see your business online?</h2>
+      <p>Drop your restaurant or salon details, and let’s verify if your custom prototype is already built.</p>
+    </div>
+    <div class="contact-box">
+      <div class="direct-contact-card">
+        <span class="label">Direct Engineering & Sales Desk</span>
+        <p class="email-text">contact@swiftwebsync.com</p>
+        <span class="subtext">Response time: Under 2 hours during US business hours.</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+/* =================================================_industries.scss ================================================= */
+/* Uses the same battle-tested design tokens as services and FAQs to maintain elite consistency */
+
+.page-header-section {
+  padding: 6rem 0 3rem 0;
+  text-align: left;
+
+  .container {
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #818cf8;
+    margin-bottom: 1.5rem;
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #6366f1;
+      border-radius: 50%;
+    }
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+
+    span {
+      color: #818cf8;
+    }
+  }
+
+  p {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 750px;
+  }
+}

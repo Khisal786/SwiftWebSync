@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article class="post-page-wrapper">
+  <!-- Post Header -->
+  <header class="page-header-section" style="padding: 4rem 0 2rem 0;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem; text-align: left;">
+      <div class="hero-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="badge-dot"></span> {{ page.date | date: "%B %d, %Y" }}
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); color: #f8fafc; line-height: 1.2; font-weight: 800;">{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <!-- Post Body Content -->
+  <section style="padding: 0 0 5rem 0;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="service-card" style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 3rem; line-height: 1.8; color: #cbd5e1; font-size: 1.1rem;">
+        {{ content }}
+      </div>
+      
+      <!-- Footer Navigation within Post -->
+      <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <a href="{{ '/blog/' | relative_url }}" style="color: #818cf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">&larr; Back to All Insights</a>
+        <a href="{{ '/contact/' | relative_url }}" class="nav-cta-btn" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+</article>

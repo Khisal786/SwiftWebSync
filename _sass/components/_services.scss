@@ -1,0 +1,133 @@
+/* =================================================_services.scss ================================================= */
+
+.services-grid-section {
+  padding: 6rem 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+.service-card {
+  background: rgba(20, 20, 22, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.4); // Subtle indigo tint on hover
+  }
+
+  .service-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .service-num {
+      font-family: monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #818cf8;
+    }
+
+    .service-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.75rem;
+      background: rgba(99, 102, 241, 0.1);
+      color: #c7d2fe;
+      border-radius: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.25rem;
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: #cbd5e1;
+      font-size: 0.875rem;
+      margin-bottom: 0.6rem;
+
+      &::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #6366f1;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.services-model-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5rem 0;
+  text-align: center;
+
+  .container {
+    max-width: 700px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile Responsiveness Fine-Tuning */
+@media (max-width: 768px) {
+  .services-grid-section {
+    padding: 3rem 0;
+  }
+  
+  .service-card {
+    padding: 1.75rem;
+  }
+  
+  .services-model-banner {
+    padding: 3.5rem 1.5rem;
+    
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+---
+layout: default
+title: "Contact Our Engineering Desk | Swift Web Sync"
+description: "Get in touch with Swift Web Sync to review your custom pre-built restaurant or salon web prototype. Fast response times during US business hours."
+---
+
+<!-- PAGE HEADER -->
+<section class="page-header-section">
+  <div class="container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span> Direct Access Desk
+    </div>
+    <h1>Let’s Talk About Your <span>Digital Presence.</span></h1>
+    <p>Whether you want to review your pre-built custom restaurant menu, request a salon booking prototype, or discuss a bespoke web application, our engineering and sales desk is ready.</p>
+  </div>
+</section>
+
+<!-- CONTACT CONTENT GRID -->
+<section class="services-grid-section">
+  <div class="container contact-grid-container">
+    
+    <!-- LEFT COLUMN: THE CONTACT FORM -->
+    <div class="service-card contact-form-card">
+      <div class="service-meta">
+        <span class="service-tag">Get Your Proposal</span>
+      </div>
+      <h2>Start Your Review</h2>
+      <p style="margin-bottom: 1.5rem;">Give us a call, write an email, or fill out the form below to see your pre-built prototype.</p>
+      
+      <!-- THE FORM -->
+      <form id="ajaxContactForm" action="https://formspree.io/f/xeaozkwd" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="name" required placeholder="e.g. John Doe">
+        </div>
+
+        <div class="form-group">
+          <label for="companyName">Company / Business Name *</label>
+          <input type="text" id="companyName" name="company" required placeholder="e.g. Smash Burger Co.">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="john@domain.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell us about your business *</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Share your location, current website (if any), or specific requirements..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-primary">Get a Quote &rarr;</button>
+      </form>
+
+      <!-- SUCCESS CONFIRMATION STATE (Hidden by default) -->
+      <div id="formSuccessMessage" class="form-success-message">
+        <h3>Message Received Successfully!</h3>
+        <p>Thank you for reaching out. Our engineering desk is reviewing your details and will deliver your custom prototype preview within 2 hours.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: DIRECT CHANNELS & WORKFLOW -->
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+      
+      <!-- DIRECT EMAIL CARD -->
+      <div class="service-card" style="margin: 0;">
+        <div class="service-meta">
+          <span class="service-tag">Direct Channel</span>
+        </div>
+        <h2>Engineering & Sales Desk</h2>
+        <p>Prefer writing directly? Reach our core team instantly via email. We analyze inquiries and respond with actionable insights.</p>
+        <div style="margin: 1.5rem 0; padding: 1.25rem; background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 8px;">
+          <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.3rem;">PRIMARY EMAIL</span>
+          <a href="mailto:contact@swiftwebsync.com" style="font-size: 1.1rem; font-weight: 600; color: #818cf8;">contact@swiftwebsync.com</a>
+        </div>
+        <p style="font-size: 0.85rem; color: #94a3b8;">Average response time: Under 2 hours during US business hours (EST/PST).</p>
+      </div>
+
+      <!-- WHAT HAPPENS NEXT CARD -->
+      <div class="service-card" style="margin: 0;">
+        <div class="service-meta">
+          <span class="service-tag">Our Workflow</span>
+        </div>
+        <h2>What Happens Next?</h2>
+        <p>When you reach out with your business name and location, here is how we handle your request:</p>
+        <ul class="service-features" style="margin-top: 1rem;">
+          <li><strong>Verification:</strong> We look up your public menu, services, and local standing.</li>
+          <li><strong>Prototype Assembly:</strong> We spin up your custom mobile-first layout on a staging link.</li>
+          <li><strong>Live Review:</strong> We send you the active link so you can test speed and ordering flows live on your phone.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- AJAX SUBMISSION HANDLER SCRIPT -->
+<script>
+  document.getElementById('ajaxContactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('formSuccessMessage');
+    
+    // Change button state to indicate loading
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Transmitting...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Hide form, clear inputs, show custom success message
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        form.reset();
+      } else {
+        alert('There was a problem sending your message. Please email us directly at contact@swiftwebsync.com');
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      alert('Network error. Please check your connection or email us directly.');
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    }
+  });
+</script>

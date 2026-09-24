@@ -1,0 +1,14 @@
+<div class="demo-card">
+  <div class="demo-image-wrapper">
+    <img src="{{ include.image | default: '/assets/images/demos/default.jpg' }}" alt="{{ include.title }}" loading="lazy">
+  </div>
+  <div class="demo-content">
+    <span class="demo-tag">{{ include.tag }}</span>
+    <h3>{{ include.title }}</h3>
+    <p>{{ include.description }}</p>
+    <div class="demo-meta">
+      <span class="demo-tech">{{ include.tech }}</span>
+      <span class="demo-status">{{ include.status | default: 'Ready to Deploy' }}</span>
+    </div>
+  </div>
+</div>

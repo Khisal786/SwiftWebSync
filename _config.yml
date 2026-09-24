@@ -1,0 +1,30 @@
+# Site Settings
+title: "Swift Web Sync"
+email: "contact@swiftwebsync.com"
+description: "High-performance web development, mobile-first ordering systems, and digital growth agency scaling businesses across the US."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://swiftwebsync.com" # the base hostname & protocol for your site
+
+# Author / Organization Entity Data (Optimized for AEO & GEO Schema)
+author:
+  name: "Swift Web Sync Team"
+  email: "contact@swiftwebsync.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins for SEO, Sitemaps, and RSS Feeds
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - README.md

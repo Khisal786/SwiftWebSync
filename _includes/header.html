@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="container header-container">
+    <a href="{{ '/' | relative_url }}" class="logo-brand">
+      Swift<span class="logo-accent">Web</span>Sync
+    </a>
+
+    <!-- Desktop & Mobile Navigation Links -->
+    <nav class="site-nav" id="siteNav">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/services/' | relative_url }}">Services</a>
+      <a href="{{ '/industries/restaurants/' | relative_url }}">Restaurants</a>
+      <a href="{{ '/industries/saloons/' | relative_url }}">Salons</a>
+      <a href="{{ '/faq/' | relative_url }}">FAQ</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <!-- <a href="{{ '/contact/' | relative_url }}">Contact</a> -->
+      <a href="{{ '/contact/' | relative_url }}" class="nav-cta-btn">Start Project</a>
+    </nav>
+
+    <!-- Mobile Menu Hamburger Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  // Simple vanilla JS toggle for mobile drawer menu
+  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const siteNav = document.getElementById('siteNav');
+  
+  if (toggleBtn && siteNav) {
+    toggleBtn.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+    });
+  }
+</script>
