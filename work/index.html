@@ -46,8 +46,11 @@ description: "Explore our production-grade deployments, high-performance static 
       </div>
 
       <!-- CASE STUDY 1: MEGA SOLUTIONS UAE -->
-      <div class="portfolio-card">
-        <div>
+      <div class="portfolio-card" style="position: relative;">
+        <!-- Stretched link covering the whole card -->
+        <a href="{{ '/work/megasolutionsuae/' | relative_url }}" class="card-overlay-link" aria-label="Read Technical Case Study for Mega Solutions UAE" style="position: absolute; inset: 0; z-index: 1;"></a>
+        
+        <div style="position: relative; z-index: 2; pointer-events: none;">
           <div class="portfolio-meta-top">
             <span class="project-category">Commercial & Industrial Platform</span>
             <span class="project-metric">100/100 SEO Score</span>
@@ -60,17 +63,24 @@ description: "Explore our production-grade deployments, high-performance static 
             <span>Advanced SEO Schema</span>
           </div>
         </div>
-        <div class="portfolio-action-bar">
-          <span class="action-note">Production Deployment</span>
-          <a href="https://megasolutionsuae.com" target="_blank" rel="noopener noreferrer" class="portfolio-link-arrow">
-            View Live Site &rarr;
+        
+        <!-- Action bar needs z-index: 3 and pointer-events: auto so the Live Site link works independently -->
+        <div class="portfolio-action-bar" style="position: relative; z-index: 3; pointer-events: auto;">
+          <a href="https://megasolutionsuae.com" target="_blank" rel="noopener noreferrer" class="action-note" style="color: var(--text-muted); text-decoration: underline;">
+            Live Site ↗
           </a>
+          <span class="portfolio-link-arrow" style="pointer-events: none;">
+            Read Case Study &rarr;
+          </span>
         </div>
       </div>
 
       <!-- CASE STUDY 2: SGRIEE -->
-      <div class="portfolio-card">
-        <div>
+      <div class="portfolio-card" style="position: relative;">
+        <!-- Stretched link covering the whole card -->
+        <a href="{{ '/work/sgriee/' | relative_url }}" class="card-overlay-link" aria-label="Read Technical Case Study for Sgriee" style="position: absolute; inset: 0; z-index: 1;"></a>
+        
+        <div style="position: relative; z-index: 2; pointer-events: none;">
           <div class="portfolio-meta-top">
             <span class="project-category">Corporate Web Architecture</span>
             <span class="project-metric">Fully Responsive Mobile-First</span>
@@ -83,11 +93,14 @@ description: "Explore our production-grade deployments, high-performance static 
             <span>DNS & Edge Optimization</span>
           </div>
         </div>
-        <div class="portfolio-action-bar">
-          <span class="action-note">Production Deployment</span>
-          <a href="https://sgriee.com" target="_blank" rel="noopener noreferrer" class="portfolio-link-arrow">
-            View Live Site &rarr;
+        
+        <div class="portfolio-action-bar" style="position: relative; z-index: 3; pointer-events: auto;">
+          <a href="https://sgriee.com" target="_blank" rel="noopener noreferrer" class="action-note" style="color: var(--text-muted); text-decoration: underline;">
+            Live Site ↗
           </a>
+          <span class="portfolio-link-arrow" style="pointer-events: none;">
+            Read Case Study &rarr;
+          </span>
         </div>
       </div>
 
