@@ -1,0 +1,219 @@
+/* =================================================_case_study.scss ================================================= */
+
+.case-study-hero {
+  padding: 5rem 0 3rem 0;
+  border-bottom: 1px solid $border-color;
+  background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: $text-main;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+
+  .case-study-subtitle {
+    font-size: 1.15rem;
+    color: $text-muted;
+    max-width: 750px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.case-study-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  background: $bg-surface;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 1.5rem;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .meta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $text-muted;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: $text-main;
+
+      &.text-success {
+        color: #10b981;
+      }
+    }
+  }
+}
+
+.live-production-banner {
+  background-color: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid $border-color;
+  padding: 1.5rem 0;
+
+  .banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .banner-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+      animation: pulse-ring 2s infinite;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $text-main;
+      margin-bottom: 0.15rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: $text-muted;
+      margin: 0;
+    }
+  }
+
+  .live-external-btn {
+    white-space: nowrap;
+    font-size: 0.875rem;
+    padding: 0.6rem 1.25rem;
+  }
+}
+
+.case-study-content-section {
+  padding: 5rem 0;
+
+  .narrow-container {
+    max-width: 800px; // Optimal reading width for technical deep dives
+  }
+
+  // Markdown typography formatting matching flagship style
+  h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: $text-main;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: $text-main;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  ul, ol {
+    color: $text-muted;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  }
+
+  strong {
+    color: $text-main;
+    font-weight: 600;
+  }
+
+  blockquote {
+    border-left: 3px solid $accent-color;
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: $text-main;
+    background: rgba(59, 130, 246, 0.03);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+.case-study-footer-cta {
+  background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+  border-top: 1px solid $border-color;
+  padding: 5rem 0;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-main;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $text-muted;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.05rem;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
