@@ -1,4 +1,5 @@
-/* =================================================_work.scss */
+/* =================================================_work.scss ================================================= */
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -136,6 +137,18 @@
       font-size: 0.8rem; 
       color: #a1a1aa;
       line-height: 1.4;
+
+      // Pulse dot integration for live work links
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #10b981;
+        border-radius: 50%;
+        box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+        animation: pulse-ring 2s infinite;
+        display: inline-block;
+        flex-shrink: 0;
+      }
     }
 
     .portfolio-link-arrow {
@@ -148,5 +161,21 @@
       white-space: nowrap;
       transition: transform 0.2s ease, color 0.2s ease;
     }
+  }
+}
+
+// Global pulse animation keyframes for live status indicators
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
 }
