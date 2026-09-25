@@ -38,6 +38,11 @@
     object-fit: contain;
   }
 
+  .logo-text {
+    display: flex;
+    align-items: center;
+  }
+
   .logo-accent {
     color: $accent-color;
   }
