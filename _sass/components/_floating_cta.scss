@@ -1,0 +1,94 @@
+/* =================================================_floating_cta.scss */
+.floating-cta-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: scale(1.08);
+
+    .cta-center-icon {
+      background-color: $accent-hover;
+    }
+  }
+
+  // Circular SVG rotating text styling
+  .rotating-text-svg {
+    width: 110px;
+    height: 110px;
+    animation: rotateBadge 14s linear infinite;
+
+    text {
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      font-weight: 600;
+      fill: $text-muted;
+      transition: fill 0.3s ease;
+    }
+  }
+
+  &:hover .rotating-text-svg text {
+    fill: $accent-color;
+  }
+
+  // Center core icon / anchor point
+  .cta-center-icon {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-color: $accent-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba($accent-color, 0.5);
+    transition: background-color 0.2s ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+  }
+}
+
+@keyframes rotateBadge {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide or adapt gracefully on smaller mobile displays to prevent content obstruction */
+@media (max-width: $breakpoint-md) {
+  .floating-cta-container {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    
+    .rotating-text-svg {
+      width: 90px;
+      height: 90px;
+    }
+    
+    .cta-center-icon {
+      width: 36px;
+      height: 36px;
+      
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
