@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<article class="case-study-page">
+  <!-- CASE STUDY HEADER HERO -->
+  <header class="case-study-hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> Technical Case Study & Deployment Breakdown
+      </div>
+      <h1>{{ page.title }}</h1>
+      <p class="case-study-subtitle">{{ page.description }}</p>
+      
+      <!-- METRICS & TECH STACK BAR -->
+      <div class="case-study-meta-grid">
+        <div class="meta-block">
+          <span class="meta-label">Client / Entity</span>
+          <span class="meta-value">{{ page.client_name }}</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label">Core Metric Achieved</span>
+          <span class="meta-value text-success">{{ page.primary_metric }}</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label">Deployment Architecture</span>
+          <span class="meta-value font-mono">{{ page.architecture_type }}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LIVE PRODUCTION CALLOUT BANNER -->
+  <section class="live-production-banner">
+    <div class="container banner-inner">
+      <div class="banner-info">
+        <span class="pulse-dot"></span>
+        <div>
+          <h3>Live Production Environment</h3>
+          <p>Verify the code speed, schema structure, and UI performance directly on the live domain.</p>
+        </div>
+      </div>
+      <a href="{{ page.live_url }}" target="_blank" rel="noopener noreferrer" class="btn-primary live-external-btn">
+        Visit Live Site &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <section class="case-study-content-section">
+    <div class="container narrow-container">
+      {{ content }}
+    </div>
+  </section>
+
+  <!-- BOTTOM CONVERSION CTA -->
+  <section class="case-study-footer-cta">
+    <div class="container text-center">
+      <h2>Ready to upgrade your business infrastructure?</h2>
+      <p>We engineer lightning-fast static applications designed to dominate search visibility and maximize customer conversion.</p>
+      <a href="{{ '/contact/' | relative_url }}" class="btn-primary">Request a Custom Architecture &rarr;</a>
+    </div>
+  </section>
+</article>
+
+<!-- AEO / GEO TECH ARTICLE SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Swift Web Sync"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Swift Web Sync",
+    "url": "https://swiftwebsync.com"
+  },
+  "about": [
+    "Search Engine Optimization (SEO)",
+    "Answer Engine Optimization (AEO)",
+    "Generative Engine Optimization (GEO)",
+    "Static Web Architecture"
+  ]
+}
+</script>
