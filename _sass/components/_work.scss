@@ -1,0 +1,117 @@
+/* =================================================_work.scss */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-card {
+  grid-column: span 6;
+  background-color: $bg-surface;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  // Make the flagship/featured card span full width for visual rhythm
+  &.featured-card {
+    grid-column: span 12;
+    background: linear-gradient(135deg, $bg-surface 0%, rgba(59, 130, 246, 0.03) 100%);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($accent-color, 0.4);
+
+    .portfolio-link-arrow {
+      transform: translateX(4px);
+      color: $accent-color;
+    }
+  }
+
+  .portfolio-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .project-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: $accent-color;
+      font-weight: 700;
+    }
+
+    .project-metric {
+      font-size: 0.8rem;
+      font-family: $font-mono;
+      color: $success-color;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $text-main;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .tech-stack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+
+    span {
+      font-size: 0.75rem;
+      font-family: $font-mono;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid $border-color;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      color: $text-muted;
+    }
+  }
+
+  .portfolio-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $border-color;
+    padding-top: 1.25rem;
+
+    .portfolio-link-arrow {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: $text-main;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+  }
+}
