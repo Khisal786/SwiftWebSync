@@ -10,6 +10,23 @@
 
     {% include footer.html %}
 
+    <!-- GLOBAL FLOATING ROTATING CTA -->
+    <a href="{{ '/contact/' | relative_url }}" class="floating-cta-container" aria-label="Start a Project or Contact Us">
+      <svg class="rotating-text-svg" viewBox="0 0 120 120">
+        <path id="circlePath" d="M 60, 60 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="transparent" />
+        <text>
+          <textPath href="#circlePath" startOffset="0%">
+            • START YOUR PROJECT • LET'S TALK
+          </textPath>
+        </text>
+      </svg>
+      <div class="cta-center-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </a>
+
     <!-- Lightweight Vanilla JS for Mobile Navigation Toggle -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
