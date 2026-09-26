@@ -1,14 +1,23 @@
 <div class="demo-card">
   <div class="demo-image-wrapper">
-    <img src="{{ include.image | default: '/assets/images/demos/default.jpg' }}" alt="{{ include.title }}" loading="lazy">
+    <img src="{{ include.image }}" alt="{{ include.title }}" loading="lazy">
+    <div class="demo-tag">{{ include.tag }}</div>
   </div>
+  
   <div class="demo-content">
-    <span class="demo-tag">{{ include.tag }}</span>
     <h3>{{ include.title }}</h3>
     <p>{{ include.description }}</p>
+    
     <div class="demo-meta">
-      <span class="demo-tech">{{ include.tech }}</span>
-      <span class="demo-status">{{ include.status | default: 'Ready to Deploy' }}</span>
+      <span>{{ include.tech }}</span>
+      <span class="demo-status live">{{ include.status }}</span>
+    </div>
+
+    <!-- Live GitHub Pages Action Link -->
+    <div class="demo-action" style="margin-top: 1.25rem;">
+      <a href="{{ include.demo_url }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: 100%; text-align: center; display: block; font-size: 0.9rem; padding: 0.6rem;">
+        Launch Live Demo &rarr;
+      </a>
     </div>
   </div>
 </div>
