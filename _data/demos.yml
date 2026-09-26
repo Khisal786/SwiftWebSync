@@ -1,7 +1,7 @@
 - tag: "Beauty & Salons"
   title: "Luxe Glow Studio & Spa"
   description: "Frictionless mobile booking interface featuring stylist selection, real-time slot picking, and instant deposit checkout."
-  image: "/assets/images/demos/salon.jpg"
+  image: "assets/images/demos/salon.jpg"
   tech: "Jekyll / SCSS / JS"
   status: "Ready to Deploy"
   demo_url: "https://khisal786.github.io/Salon-Aura-Atelier-Salon/"
