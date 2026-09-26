@@ -8,7 +8,7 @@
 
 - tag: "Fast Food & Burgers"
   title: "The Smash Burger Concept"
-  image: "/assets/images/demos/smash-burger.jpg"
+  image: "assets/images/demos/smash-burger.jpg"
   description: "Dark-mode immersive layout featuring sticky category filters, bento menu grids, and instant cart tracking."
   tech: "Jekyll / SCSS / JS"
   status: "Ready to Deploy"
@@ -16,7 +16,7 @@
 
 - tag: "Asian & Chinese Dining"
   title: "Wok & Roll Kitchen"
-  image: "/assets/images/demos/wok-kitchen.jpg"
+  image: "assets/images/demos/wok-kitchen.jpg"
   description: "Optimized for multi-item meal customization, dietary badges, and high-speed mobile scrolling."
   tech: "Jekyll / SCSS / JS"
   status: "Ready to Deploy"
@@ -24,7 +24,7 @@
 
 - tag: "Pizzeria & Italian"
   title: "Crust & Co. Pizzeria"
-  image: "/assets/images/demos/pizza-crust.jpg"
+  image: "assets/images/demos/pizza-crust.jpg"
   description: "Features complex size-selection modals, crust add-ons, and automated WhatsApp order dispatching."
   tech: "Jekyll / SCSS / JS"
   status: "Ready to Deploy"
