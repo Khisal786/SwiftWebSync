@@ -1,0 +1,229 @@
+---
+layout: default
+title: "Configure Your Custom Demo | Swift Web Sync"
+description: "Submit your business details, menu items, or service catalog and brand color palette to generate your bespoke high-performance web prototype."
+---
+
+<!-- SETUP FORM HERO -->
+<section class="page-header-section">
+  <div class="container" style="max-width: 800px; text-align: left; margin-bottom: 2rem;">
+    <div class="hero-badge">
+      <span class="badge-dot"></span> Custom Prototype Intake
+    </div>
+    <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Build Your Custom <span>Web Preview</span></h1>
+    <p style="color: var(--text-muted); font-size: 1.05rem;">Fill out your business data, menu items, or service offerings below. Our engineering team will compile your custom prototype within 24 hours—completely free before you spend a single dollar.</p>
+  </div>
+</section>
+
+<!-- SETUP FORM CONTAINER -->
+<section style="padding: 0 0 5rem 0;">
+  <div class="container setup-form-container">
+    
+    <div class="setup-form-wrapper">
+      
+      <!-- Success Banner matching your Contact Us style -->
+      <div class="setup-success-message" id="successMessage" style="display: none;">
+        <h3>Message Received Successfully!</h3>
+        <p>Thank you for reaching out. Our engineering desk is reviewing your details and will deliver your custom prototype preview within 2 hours.</p>
+      </div>
+
+      <!-- Form with async submit handling via JavaScript -->
+      <form id="setupForm">
+        <input type="hidden" name="_subject" value="🚀 New Custom Prototype Request - Setup Form">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <!-- SECTION 1: BUSINESS INFO -->
+        <div class="setup-form-section">
+          <div class="setup-section-title">
+            <span>1</span> Core Business Information
+          </div>
+
+          <div class="setup-form-row">
+            <div class="setup-form-group">
+              <label for="businessName">Business Name <span class="required">*</span></label>
+              <input type="text" id="businessName" name="businessName" required placeholder="e.g., Core & Flow Studio">
+            </div>
+            <div class="setup-form-group">
+              <label for="businessType">Industry Vertical <span class="required">*</span></label>
+              <select id="businessType" name="businessType" required>
+                <option value="">-- Select Industry --</option>
+                <option value="restaurant">Restaurant / Pizzeria / Cafe</option>
+                <option value="salon">Hair Salon / Spa / Barber</option>
+                <option value="contractor">Home Contractor / Landscaper</option>
+                <option value="fitness">Pilates / Yoga / Fitness Studio</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="setup-form-row">
+            <div class="setup-form-group">
+              <label for="email">Contact Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="owner@business.com">
+            </div>
+            <div class="setup-form-group">
+              <label for="phone">Phone / WhatsApp <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+            </div>
+          </div>
+
+          <div class="setup-form-group">
+            <label for="address">City / Business Location</label>
+            <input type="text" id="address" name="address" placeholder="e.g., Austin, Texas">
+          </div>
+        </div>
+
+        <!-- SECTION 2: INDUSTRY-SPECIFIC CATALOG / MENU / SERVICES -->
+        <div class="setup-form-section">
+          <div class="setup-section-title">
+            <span>2</span> Menu Items, Services & Portfolio Items
+          </div>
+
+          <!-- RESTAURANT / FOOD SPECIFIC -->
+          <div id="restaurantSection" class="setup-conditional-section">
+            <div class="setup-form-group">
+              <label>Menu Items & Prices</label>
+              <p class="setup-form-hint">Add core items you want highlighted on your digital menu prototype.</p>
+              <table class="setup-items-table">
+                <thead>
+                  <tr>
+                    <th>Item Name</th>
+                    <th>Price ($)</th>
+                    <th>Category</th>
+                    <th style="width: 50px;"></th>
+                  </tr>
+                </thead>
+                <tbody id="restaurantMenuBody">
+                  <tr>
+                    <td><input type="text" placeholder="Truffle Smash Burger" class="menuItem"></td>
+                    <td><input type="number" placeholder="14.50" step="0.01" class="menuPrice"></td>
+                    <td><input type="text" placeholder="Burgers" class="menuCategory"></td>
+                    <td style="text-align: center;"><button type="button" class="setup-remove-btn" onclick="removeRow(this)">X</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="setup-add-item-btn" onclick="addMenuRow()">+ Add Another Menu Item</button>
+            </div>
+          </div>
+
+          <!-- SALON SPECIFIC -->
+          <div id="salonSection" class="setup-conditional-section">
+            <div class="setup-form-group">
+              <label for="stylists">Stylist / Specialist Names (Comma separated)</label>
+              <input type="text" id="stylists" name="stylists" placeholder="Elena, Marcus, Chloe">
+            </div>
+            <div class="setup-form-group">
+              <label>Top Salon Services & Pricing</label>
+              <table class="setup-items-table">
+                <thead>
+                  <tr>
+                    <th>Service Name</th>
+                    <th>Price ($)</th>
+                    <th>Duration (Mins)</th>
+                    <th style="width: 50px;"></th>
+                  </tr>
+                </thead>
+                <tbody id="salonServicesBody">
+                  <tr>
+                    <td><input type="text" placeholder="Signature Balayage & Cut" class="serviceName"></td>
+                    <td><input type="number" placeholder="180" step="1" class="servicePrice"></td>
+                    <td><input type="number" placeholder="120" step="1" class="serviceDuration"></td>
+                    <td style="text-align: center;"><button type="button" class="setup-remove-btn" onclick="removeRow(this)">X</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="setup-add-item-btn" onclick="addServiceRow()">+ Add Another Service</button>
+            </div>
+          </div>
+
+          <!-- HOME CONTRACTOR SPECIFIC -->
+          <div id="contractorSection" class="setup-conditional-section">
+            <div class="setup-form-group">
+              <label for="contractorServices">Specialized Trade Services Offered</label>
+              <textarea id="contractorServices" name="contractorServices" placeholder="e.g., Luxury Outdoor Living, Custom Paver Patios, Retaining Walls"></textarea>
+            </div>
+            <div class="setup-form-group">
+              <label for="recentProjects">Recent Showcase Projects (Describe 2-3 high-ticket jobs)</label>
+              <textarea id="recentProjects" name="recentProjects" placeholder="Project 1: The Crestview Modern Hardscape..."></textarea>
+              <p class="setup-form-hint">We will format these into high-impact before/after portfolio cards.</p>
+            </div>
+          </div>
+
+          <!-- FITNESS / PILATES STUDIO SPECIFIC -->
+          <div id="fitnessSection" class="setup-conditional-section">
+            <div class="setup-form-group">
+              <label>Core Class Schedule & Instructors</label>
+              <table class="setup-items-table">
+                <thead>
+                  <tr>
+                    <th>Class Name</th>
+                    <th>Instructor</th>
+                    <th>Time Slot</th>
+                    <th style="width: 50px;"></th>
+                  </tr>
+                </thead>
+                <tbody id="fitnessClassBody">
+                  <tr>
+                    <td><input type="text" placeholder="Reformer Flow Level 1" class="className"></td>
+                    <td><input type="text" placeholder="Sarah Jenkins" class="classInstructor"></td>
+                    <td><input type="text" placeholder="09:00 AM" class="classTime"></td>
+                    <td style="text-align: center;"><button type="button" class="setup-remove-btn" onclick="removeRow(this)">X</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="setup-add-item-btn" onclick="addClassRow()">+ Add Another Class</button>
+            </div>
+          </div>
+
+          <div id="defaultInstruction" class="setup-default-instruction">
+            👆 Please select your **Industry Vertical** in Section 1 above to unlock the customized menu or service builder.
+          </div>
+        </div>
+
+        <!-- SECTION 3: BRANDING & COLOR SCHEME -->
+        <div class="setup-form-section">
+          <div class="setup-section-title">
+            <span>3</span> Branding & Color Scheme Preferences
+          </div>
+
+          <div class="setup-form-row">
+            <div class="setup-form-group">
+              <label>Primary Theme Accent Color</label>
+              <div class="setup-color-group">
+                <input type="color" id="primaryColor" name="primaryColor" value="#3b82f6">
+                <span id="primaryColorCode" class="setup-color-code">#3b82f6</span>
+              </div>
+            </div>
+            <div class="setup-form-group">
+              <label>Secondary / Dark Tone Color</label>
+              <div class="setup-color-group">
+                <input type="color" id="secondaryColor" name="secondaryColor" value="#0f172a">
+                <span id="secondaryColorCode" class="setup-color-code">#0f172a</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="setup-form-group">
+            <label for="logoTextOrUrl">Logo Text or Image Link</label>
+            <input type="text" id="logoTextOrUrl" name="logoTextOrUrl" placeholder="Type business name for text logo, or paste image URL">
+          </div>
+
+          <div class="setup-form-group">
+            <label for="additionalNotes">Additional Custom Requirements / Notes</label>
+            <textarea id="additionalNotes" name="additionalNotes" placeholder="Mention any specific vibe, styling preference, or special features needed..."></textarea>
+          </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <div class="setup-submit-wrapper">
+          <button type="submit" id="submitBtn">🚀 Submit Prototype Request &rarr;</button>
+          <p>🔒 Zero spam. We use these exact specs to build your custom live demo within 24 hours.</p>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Link Modular JavaScript Asset -->
+<script src="{{ '/assets/js/setup.js' | relative_url }}"></script>
