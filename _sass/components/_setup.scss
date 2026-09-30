@@ -1,0 +1,260 @@
+/* =================================================
+   _setup.scss - Custom Prototype Intake Form Styles
+   ================================================= */
+
+.setup-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.setup-form-wrapper {
+  background-color: $bg-surface;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 1.5rem;
+  }
+}
+
+.setup-success-message {
+  display: none;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid $success-color;
+  color: $success-color;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+
+  &.show {
+    display: block;
+  }
+}
+
+.setup-form-section {
+  margin-bottom: 2.5rem;
+
+  .setup-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-main;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 0.5rem;
+
+    span {
+      background: $accent-color;
+      color: #ffffff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.setup-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.setup-form-group {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $text-main;
+
+    .required {
+      color: #ef4444;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: $bg-primary;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    color: $text-main;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+      box-shadow: 0 0 0 3px rgba($accent-color, 0.15);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+}
+
+.setup-form-hint {
+  font-size: 0.75rem;
+  color: $text-muted;
+  margin-top: 0.3rem;
+}
+
+.setup-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+
+  th {
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    color: $text-muted;
+    border-bottom: 1px solid $border-color;
+  }
+
+  td {
+    padding: 0.4rem;
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      background: $bg-primary;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      color: $text-main;
+      font-size: 0.85rem;
+
+      &:focus {
+        outline: none;
+        border-color: $accent-color;
+      }
+    }
+  }
+
+  .setup-remove-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #dc2626;
+    }
+  }
+}
+
+.setup-add-item-btn {
+  background: transparent;
+  border: 1px dashed $accent-color;
+  color: $accent-color;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: rgba($accent-color, 0.05);
+  }
+}
+
+.setup-color-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: $bg-primary;
+  padding: 0.5rem;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+
+  input[type="color"] {
+    width: 40px;
+    height: 35px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .setup-color-code {
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    color: $text-main;
+  }
+}
+
+.setup-conditional-section {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.setup-default-instruction {
+  padding: 1.5rem;
+  background: $bg-primary;
+  border: 1px dashed $border-color;
+  border-radius: 8px;
+  text-align: center;
+  color: $text-muted;
+  font-size: 0.9rem;
+}
+
+.setup-submit-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: $accent-color;
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: $accent-hover;
+      transform: translateY(-1px);
+    }
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: $text-muted;
+    margin-top: 0.75rem;
+  }
+}
