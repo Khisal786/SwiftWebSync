@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.closest('tr').remove();
   };
 
-  // Asynchronous Form submission handler via Formspree API (Stays on page, shows confirmation box)
+  // Asynchronous Form submission handler via Formspree API (Stays on page, compiles dynamic tables)
   if (setupForm) {
     setupForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -97,6 +97,52 @@ document.addEventListener('DOMContentLoaded', function() {
       submitBtn.innerHTML = 'Submitting Details...';
       submitBtn.disabled = true;
 
+      // 1. Gather dynamic table/catalog rows based on selected business type
+      const businessType = document.getElementById('businessType').value;
+      let catalogSummary = "=== DYNAMIC INDUSTRY CATALOG DATA ===\n";
+
+      if (businessType === 'restaurant') {
+        const rows = document.querySelectorAll('#restaurantMenuBody tr');
+        rows.forEach((row, index) => {
+          const name = row.querySelector('.menuItem')?.value;
+          const price = row.querySelector('.menuPrice')?.value;
+          const category = row.querySelector('.menuCategory')?.value;
+          if (name) {
+            catalogSummary += `[Item ${index + 1}] Name: ${name} | Price: $${price} | Category: ${category}\n`;
+          }
+        });
+      } else if (businessType === 'salon') {
+        const stylists = document.getElementById('stylists').value;
+        catalogSummary += `Stylists/Specialists: ${stylists}\n`;
+        const rows = document.querySelectorAll('#salonServicesBody tr');
+        rows.forEach((row, index) => {
+          const name = row.querySelector('.serviceName')?.value;
+          const price = row.querySelector('.servicePrice')?.value;
+          const duration = row.querySelector('.serviceDuration')?.value;
+          if (name) {
+            catalogSummary += `[Service ${index + 1}] Name: ${name} | Price: $${price} | Duration: ${duration} mins\n`;
+          }
+        });
+      } else if (businessType === 'contractor') {
+        const contractorServices = document.getElementById('contractorServices')?.value;
+        const recentProjects = document.getElementById('recentProjects')?.value;
+        catalogSummary += `Services Offered: ${contractorServices}\nRecent Projects: ${recentProjects}\n`;
+      } else if (businessType === 'fitness') {
+        const rows = document.querySelectorAll('#fitnessClassBody tr');
+        rows.forEach((row, index) => {
+          const name = row.querySelector('.className')?.value;
+          const instructor = row.querySelector('.classInstructor')?.value;
+          const time = row.querySelector('.classTime')?.value;
+          if (name) {
+            catalogSummary += `[Class ${index + 1}] Name: ${name} | Instructor: ${instructor} | Time: ${time}\n`;
+          }
+        });
+      }
+
+      // Inject compiled summary into our hidden field
+      document.getElementById('customCatalogData').value = catalogSummary;
+
+      // 2. Submit via Fetch API
       const formData = new FormData(setupForm);
       const formspreeEndpoint = 'https://formspree.io/f/mjykljrq';
 
