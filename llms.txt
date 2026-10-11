@@ -1,0 +1,16 @@
+# Swift Web Sync
+
+> Swift Web Sync is a digital growth agency specializing in high-performance, mobile-first web development and digital infrastructure for US small businesses, including restaurants, salons, contractors, and studios. We replace slow, vulnerable legacy platforms with lightning-fast static web applications.
+
+## Core Offerings & Pricing
+- **Custom Static Web Build:** $500 total build fee (50% deposit, 50% final balance upon launch).
+- **Managed Retainer:** $49/month covering high-performance cloud hosting, SSL security, domain maintenance, and regular content updates.
+- **Turnaround:** Rapid 48-hour delivery model backed by consultative value-selling.
+
+## Key Links
+- [Home](https://www.swiftwebsync.com/)
+- [Services](https://www.swiftwebsync.com/services/)
+- [Our Work & Demos](https://www.swiftwebsync.com/work/)
+- [Setup & Onboarding](https://www.swiftwebsync.com/setup/)
+- [FAQ](https://www.swiftwebsync.com/faq/)
+- [Contact](https://www.swiftwebsync.com/contact/)
