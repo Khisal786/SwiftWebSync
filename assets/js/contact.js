@@ -1,3 +1,7 @@
+// ==========================================
+// SWIFT WEB SYNC - CONTACT FORM AJAX HANDLER
+// ==========================================
+
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('ajaxContactForm');
   if (!contactForm) return;
