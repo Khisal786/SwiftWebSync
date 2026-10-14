@@ -1,4 +1,7 @@
-/* =================================================_contact.scss */
+/* =================================================
+   _contact.scss - Contact Form & Grid Styles
+   ================================================= */
+
 .contact-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -42,7 +45,6 @@
     }
   }
 
-  // Ensure the submit button matches the flagship global .btn-primary look and height
   button[type="submit"] {
     display: inline-flex;
     align-items: center;
@@ -65,7 +67,6 @@
     }
   }
 }
-
 
 /* Success State Confirmation Banner */
 .form-success-message {
