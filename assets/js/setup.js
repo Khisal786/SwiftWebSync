@@ -1,3 +1,7 @@
+// ==========================================
+// SWIFT WEB SYNC - SETUP FORM & DYNAMIC BUILDER
+// ==========================================
+
 document.addEventListener('DOMContentLoaded', function() {
   const businessTypeSelect = document.getElementById('businessType');
   const defaultInstruction = document.getElementById('defaultInstruction');
@@ -13,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('salonSection').classList.remove('active');
     document.getElementById('contractorSection').classList.remove('active');
     document.getElementById('fitnessSection').classList.remove('active');
-    defaultInstruction.style.display = 'none';
+    if (defaultInstruction) defaultInstruction.style.display = 'none';
 
     if (type === 'restaurant') {
       document.getElementById('restaurantSection').classList.add('active');
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (type === 'fitness') {
       document.getElementById('fitnessSection').classList.add('active');
     } else {
-      defaultInstruction.style.display = 'block';
+      if (defaultInstruction) defaultInstruction.style.display = 'block';
     }
   };
 
@@ -36,13 +40,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (primaryColorInput) {
     primaryColorInput.addEventListener('input', function() {
-      document.getElementById('primaryColorCode').textContent = this.value;
+      const codeEl = document.getElementById('primaryColorCode');
+      if (codeEl) codeEl.textContent = this.value;
     });
   }
 
   if (secondaryColorInput) {
     secondaryColorInput.addEventListener('input', function() {
-      document.getElementById('secondaryColorCode').textContent = this.value;
+      const codeEl = document.getElementById('secondaryColorCode');
+      if (codeEl) codeEl.textContent = this.value;
     });
   }
 
@@ -87,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.closest('tr').remove();
   };
 
-  // Asynchronous Form submission handler via Formspree API (Stays on page, compiles dynamic tables)
+  // Asynchronous Form submission handler via Formspree API
   if (setupForm) {
     setupForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -112,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       } else if (businessType === 'salon') {
-        const stylists = document.getElementById('stylists').value;
+        const stylists = document.getElementById('stylists')?.value || '';
         catalogSummary += `Stylists/Specialists: ${stylists}\n`;
         const rows = document.querySelectorAll('#salonServicesBody tr');
         rows.forEach((row, index) => {
@@ -124,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       } else if (businessType === 'contractor') {
-        const contractorServices = document.getElementById('contractorServices')?.value;
-        const recentProjects = document.getElementById('recentProjects')?.value;
+        const contractorServices = document.getElementById('contractorServices')?.value || '';
+        const recentProjects = document.getElementById('recentProjects')?.value || '';
         catalogSummary += `Services Offered: ${contractorServices}\nRecent Projects: ${recentProjects}\n`;
       } else if (businessType === 'fitness') {
         const rows = document.querySelectorAll('#fitnessClassBody tr');
@@ -139,8 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
-      // Inject compiled summary into our hidden field
-      document.getElementById('customCatalogData').value = catalogSummary;
+      // Inject compiled summary into hidden field
+      const catalogDataEl = document.getElementById('customCatalogData');
+      if (catalogDataEl) catalogDataEl.value = catalogSummary;
 
       // 2. Submit via Fetch API
       const formData = new FormData(setupForm);
@@ -155,12 +162,12 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          // Hide form, show success message smoothly
           setupForm.style.display = 'none';
           const successBox = document.getElementById('successMessage');
-          successBox.style.display = 'block';
-          successBox.classList.add('show');
-          
+          if (successBox) {
+            successBox.style.display = 'block';
+            successBox.classList.add('show');
+          }
           setupForm.reset();
         } else {
           alert('Oops! There was a problem submitting your form. Please try again.');
