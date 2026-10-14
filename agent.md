@@ -13,6 +13,7 @@
 - **Performance:** 100/100 Lighthouse performance metrics, zero database overhead, mobile-first design.
 
 ## Business Model & Policies
-- **Build Fee:** $500 USD fixed structure ($250 deposit, $250 completion balance).
+- **Risk-Free Prototype:** Free pre-built interactive mobile prototype link delivered in 24–48 hours for review before purchase.
+- **Build Fee:** $500 USD fixed structure ($250 deposit, $250 launch balance) applied only upon client approval to go live on custom domain.
 - **Retainer:** $49 USD/month managed hosting and maintenance plan.
-- **Domain Custody:** Managed administrative custody during initial setup and management phases to guarantee security and routing uptime.
+- **Domain & Branding Custody:** Client retains 100% domain and brand ownership; agency manages technical administrative DNS/hosting routing during active management.
