@@ -13,20 +13,25 @@ document.addEventListener('DOMContentLoaded', function() {
   window.updateForm = function() {
     const type = businessTypeSelect.value;
     
-    document.getElementById('restaurantSection').classList.remove('active');
-    document.getElementById('salonSection').classList.remove('active');
-    document.getElementById('contractorSection').classList.remove('active');
-    document.getElementById('fitnessSection').classList.remove('active');
+    const restSec = document.getElementById('restaurantSection');
+    const salonSec = document.getElementById('salonSection');
+    const contSec = document.getElementById('contractorSection');
+    const fitSec = document.getElementById('fitnessSection');
+
+    if (restSec) restSec.classList.remove('active');
+    if (salonSec) salonSec.classList.remove('active');
+    if (contSec) contSec.classList.remove('active');
+    if (fitSec) fitSec.classList.remove('active');
     if (defaultInstruction) defaultInstruction.style.display = 'none';
 
-    if (type === 'restaurant') {
-      document.getElementById('restaurantSection').classList.add('active');
-    } else if (type === 'salon') {
-      document.getElementById('salonSection').classList.add('active');
-    } else if (type === 'contractor') {
-      document.getElementById('contractorSection').classList.add('active');
-    } else if (type === 'fitness') {
-      document.getElementById('fitnessSection').classList.add('active');
+    if (type === 'restaurant' && restSec) {
+      restSec.classList.add('active');
+    } else if (type === 'salon' && salonSec) {
+      salonSec.classList.add('active');
+    } else if (type === 'contractor' && contSec) {
+      contSec.classList.add('active');
+    } else if (type === 'fitness' && fitSec) {
+      fitSec.classList.add('active');
     } else {
       if (defaultInstruction) defaultInstruction.style.display = 'block';
     }
@@ -55,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Dynamic table row functions
   window.addMenuRow = function() {
     const tbody = document.getElementById('restaurantMenuBody');
+    if (!tbody) return;
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><input type="text" placeholder="Item name" class="menuItem"></td>
@@ -67,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addServiceRow = function() {
     const tbody = document.getElementById('salonServicesBody');
+    if (!tbody) return;
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><input type="text" placeholder="Service name" class="serviceName"></td>
@@ -79,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addClassRow = function() {
     const tbody = document.getElementById('fitnessClassBody');
+    if (!tbody) return;
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><input type="text" placeholder="Class name" class="className"></td>
@@ -90,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   window.removeRow = function(btn) {
-    btn.closest('tr').remove();
+    if (btn && btn.closest('tr')) {
+      btn.closest('tr').remove();
+    }
   };
 
   // Asynchronous Form submission handler via Formspree API
@@ -99,22 +109,25 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
 
       const submitBtn = document.getElementById('submitBtn');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Submitting Details...';
-      submitBtn.disabled = true;
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
+      if (submitBtn) {
+        submitBtn.innerHTML = 'Submitting Details...';
+        submitBtn.disabled = true;
+      }
 
       // 1. Gather dynamic table/catalog rows based on selected business type
-      const businessType = document.getElementById('businessType').value;
+      const businessType = document.getElementById('businessType')?.value || '';
       let catalogSummary = "=== DYNAMIC INDUSTRY CATALOG DATA ===\n";
 
       if (businessType === 'restaurant') {
         const rows = document.querySelectorAll('#restaurantMenuBody tr');
         rows.forEach((row, index) => {
-          const name = row.querySelector('.menuItem')?.value;
-          const price = row.querySelector('.menuPrice')?.value;
-          const category = row.querySelector('.menuCategory')?.value;
+          const name = row.querySelector('.menuItem')?.value?.trim();
+          const price = row.querySelector('.menuPrice')?.value?.trim();
+          const category = row.querySelector('.menuCategory')?.value?.trim() || 'General';
           if (name) {
-            catalogSummary += `[Item ${index + 1}] Name: ${name} | Price: $${price} | Category: ${category}\n`;
+            const priceFormatted = price ? `$${price}` : 'N/A';
+            catalogSummary += `[Item ${index + 1}] Name: ${name} | Price: ${priceFormatted} | Category: ${category}\n`;
           }
         });
       } else if (businessType === 'salon') {
@@ -122,11 +135,13 @@ document.addEventListener('DOMContentLoaded', function() {
         catalogSummary += `Stylists/Specialists: ${stylists}\n`;
         const rows = document.querySelectorAll('#salonServicesBody tr');
         rows.forEach((row, index) => {
-          const name = row.querySelector('.serviceName')?.value;
-          const price = row.querySelector('.servicePrice')?.value;
-          const duration = row.querySelector('.serviceDuration')?.value;
+          const name = row.querySelector('.serviceName')?.value?.trim();
+          const price = row.querySelector('.servicePrice')?.value?.trim();
+          const duration = row.querySelector('.serviceDuration')?.value?.trim();
           if (name) {
-            catalogSummary += `[Service ${index + 1}] Name: ${name} | Price: $${price} | Duration: ${duration} mins\n`;
+            const priceFormatted = price ? `$${price}` : 'N/A';
+            const durationFormatted = duration ? `${duration} mins` : 'N/A';
+            catalogSummary += `[Service ${index + 1}] Name: ${name} | Price: ${priceFormatted} | Duration: ${durationFormatted}\n`;
           }
         });
       } else if (businessType === 'contractor') {
@@ -136,9 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (businessType === 'fitness') {
         const rows = document.querySelectorAll('#fitnessClassBody tr');
         rows.forEach((row, index) => {
-          const name = row.querySelector('.className')?.value;
-          const instructor = row.querySelector('.classInstructor')?.value;
-          const time = row.querySelector('.classTime')?.value;
+          const name = row.querySelector('.className')?.value?.trim();
+          const instructor = row.querySelector('.classInstructor')?.value?.trim() || 'N/A';
+          const time = row.querySelector('.classTime')?.value?.trim() || 'N/A';
           if (name) {
             catalogSummary += `[Class ${index + 1}] Name: ${name} | Instructor: ${instructor} | Time: ${time}\n`;
           }
@@ -149,9 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const catalogDataEl = document.getElementById('customCatalogData');
       if (catalogDataEl) catalogDataEl.value = catalogSummary;
 
-      // 2. Submit via Fetch API
+      // 2. Submit via Fetch API reading action from form attribute
       const formData = new FormData(setupForm);
-      const formspreeEndpoint = 'https://formspree.io/f/mjykljrq';
+      const formspreeEndpoint = setupForm.action || 'https://formspree.io/f/mjykljrq';
 
       fetch(formspreeEndpoint, {
         method: 'POST',
@@ -162,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          setupForm.style.display = 'none';
+          setupFileStyle = setupForm.style.display = 'none';
           const successBox = document.getElementById('successMessage');
           if (successBox) {
             successBox.style.display = 'block';
@@ -171,14 +186,18 @@ document.addEventListener('DOMContentLoaded', function() {
           setupForm.reset();
         } else {
           alert('Oops! There was a problem submitting your form. Please try again.');
-          submitBtn.innerHTML = originalBtnText;
-          submitBtn.disabled = false;
+          if (submitBtn) {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+          }
         }
       })
       .catch(error => {
         alert('Network error. Please check your connection and try again.');
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
+        if (submitBtn) {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
       });
     });
   }
