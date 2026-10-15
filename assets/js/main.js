@@ -3,7 +3,8 @@
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menuToggle');
+  // Updated selector ID from 'menuToggle' to 'mobileMenuToggle' to match header markup
+  const menuToggle = document.getElementById('mobileMenuToggle');
   const siteNav = document.getElementById('siteNav');
 
   if (menuToggle && siteNav) {
