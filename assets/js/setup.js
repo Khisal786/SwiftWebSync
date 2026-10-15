@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          setupFileStyle = setupForm.style.display = 'none';
+          setupForm.style.display = 'none'; // Fixed global scope typo
           const successBox = document.getElementById('successMessage');
           if (successBox) {
             successBox.style.display = 'block';
