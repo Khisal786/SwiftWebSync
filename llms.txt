@@ -16,3 +16,4 @@
 - [FAQ](https://www.swiftwebsync.com/faq/)
 - [Contact](https://www.swiftwebsync.com/contact/)
 - [Terms of Service](https://www.swiftwebsync.com/terms/)
+- [Privacy Policy](https://www.swiftwebsync.com/privacy/)
