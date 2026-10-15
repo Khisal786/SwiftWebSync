@@ -36,8 +36,9 @@
     }
   }
 
+  .footer-col,
   .footer-links-col {
-    h4 {
+    h3, h4 {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -46,18 +47,45 @@
       font-weight: 600;
     }
 
+    p {
+      color: $text-muted;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
+      li {
+        a {
+          color: $text-muted;
+          font-size: 0.9rem;
+          text-decoration: none;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+
+    .footer-email {
+      color: $accent-color;
+      font-size: 0.9rem;
+      font-weight: 500;
+      
       a {
-        color: $text-muted;
-        font-size: 0.9rem;
-        transition: color 0.2s ease;
+        color: $accent-color;
+        text-decoration: underline;
 
         &:hover {
-          color: $accent-color;
+          color: $accent-hover;
         }
       }
     }
