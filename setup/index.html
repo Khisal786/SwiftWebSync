@@ -27,8 +27,8 @@ description: "Submit your business details, menu items, or service catalog and b
         <p>Thank you for reaching out. Our engineering desk is reviewing your details and will deliver your custom prototype preview within 24 to 48 hours.</p>
       </div>
 
-      <!-- Form with async submit handling via JavaScript -->
-      <form id="setupForm">
+      <!-- Form with async submit handling & fallback action/method -->
+      <form id="setupForm" action="https://formspree.io/f/mjykljrq" method="POST">
         <input type="hidden" name="_subject" value="🚀 New Custom Prototype Request - Setup Form">
         <input type="hidden" name="_captcha" value="false">
         
@@ -177,8 +177,9 @@ description: "Submit your business details, menu items, or service catalog and b
             </div>
           </div>
 
+          <!-- Fixed raw markdown asterisks -->
           <div id="defaultInstruction" class="setup-default-instruction">
-            👆 Please select your **Industry Vertical** in Section 1 above to unlock the customized menu or service builder.
+            👆 Please select your Industry Vertical in Section 1 above to unlock the customized menu or service builder.
           </div>
         </div>
 
@@ -218,6 +219,9 @@ description: "Submit your business details, menu items, or service catalog and b
 
         <!-- SUBMIT BUTTON -->
         <div class="setup-submit-wrapper">
+          <p class="form-privacy-notice" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">
+            By submitting, you agree to our <a href="{{ '/privacy/' | relative_url }}" style="color: var(--accent-color); text-decoration: underline;">Privacy Policy</a>.
+          </p>
           <button type="submit" id="submitBtn">🚀 Submit Prototype Request &rarr;</button>
           <p>🔒 Zero spam. We use these exact specs to build your custom live demo within 24 to 48 hours.</p>
         </div>
