@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           setupForm.reset();
         } else {
-          alert('Oops! There was a problem submitting your form. Please try again.');
+          console.error('Form submission error response:', response);
           if (submitBtn) {
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       })
       .catch(error => {
-        alert('Network error. Please check your connection and try again.');
+        console.error('Form network error:', error);
         if (submitBtn) {
           submitBtn.innerHTML = originalBtnText;
           submitBtn.disabled = false;
