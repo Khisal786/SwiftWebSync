@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const businessTypeSelect = document.getElementById('businessType');
   const defaultInstruction = document.getElementById('defaultInstruction');
   const setupForm = document.getElementById('setupForm');
+  const errorMsg = document.getElementById('formErrorMessage');
 
   if (!businessTypeSelect) return;
 
@@ -108,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
+      if (errorMsg) errorMsg.style.display = 'none';
+
       const submitBtn = document.getElementById('submitBtn');
       const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
       if (submitBtn) {
@@ -177,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          setupForm.style.display = 'none'; // Fixed global scope typo
+          setupForm.style.display = 'none';
           const successBox = document.getElementById('successMessage');
           if (successBox) {
             successBox.style.display = 'block';
@@ -186,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
           setupForm.reset();
         } else {
           console.error('Form submission error response:', response);
+          if (errorMsg) errorMsg.style.display = 'block';
           if (submitBtn) {
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
@@ -194,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => {
         console.error('Form network error:', error);
+        if (errorMsg) errorMsg.style.display = 'block';
         if (submitBtn) {
           submitBtn.innerHTML = originalBtnText;
           submitBtn.disabled = false;
