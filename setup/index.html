@@ -20,6 +20,12 @@ description: "Submit your business details, menu items, or service catalog and b
   <div class="container setup-form-container">
     
     <div class="setup-form-wrapper">
+
+      <noscript>
+        <div style="padding: 1rem; background: #374151; border: 1px solid #4b5563; border-radius: 6px; margin-bottom: 1.5rem; color: #f3f4f6;">
+          ⚠️ <strong>JavaScript Disabled:</strong> For the best interactive experience with dynamic catalog rows, please enable JavaScript. Standard form inputs will still submit normally.
+        </div>
+      </noscript>
       
       <!-- Success Banner matching your Contact Us style -->
       <div class="setup-success-message" id="successMessage" style="display: none;">
@@ -97,9 +103,9 @@ description: "Submit your business details, menu items, or service catalog and b
                 </thead>
                 <tbody id="restaurantMenuBody">
                   <tr>
-                    <td><input type="text" placeholder="Truffle Smash Burger" class="menuItem"></td>
-                    <td><input type="number" placeholder="14.50" step="0.01" class="menuPrice"></td>
-                    <td><input type="text" placeholder="Burgers" class="menuCategory"></td>
+                    <td><input type="text" name="fallback_menu_item" placeholder="Truffle Smash Burger" class="menuItem"></td>
+                    <td><input type="number" name="fallback_menu_price" placeholder="14.50" step="0.01" class="menuPrice"></td>
+                    <td><input type="text" name="fallback_menu_category" placeholder="Burgers" class="menuCategory"></td>
                     <td style="text-align: center;"><button type="button" class="setup-remove-btn" onclick="removeRow(this)">X</button></td>
                   </tr>
                 </tbody>
@@ -127,9 +133,9 @@ description: "Submit your business details, menu items, or service catalog and b
                 </thead>
                 <tbody id="salonServicesBody">
                   <tr>
-                    <td><input type="text" placeholder="Signature Balayage & Cut" class="serviceName"></td>
-                    <td><input type="number" placeholder="180" step="1" class="servicePrice"></td>
-                    <td><input type="number" placeholder="120" step="1" class="serviceDuration"></td>
+                    <td><input type="text" name="fallback_service_name" placeholder="Signature Balayage & Cut" class="serviceName"></td>
+                    <td><input type="number" name="fallback_service_price" placeholder="180" step="1" class="servicePrice"></td>
+                    <td><input type="number" name="fallback_service_duration" placeholder="120" step="1" class="serviceDuration"></td>
                     <td style="text-align: center;"><button type="button" class="setup-remove-btn" onclick="removeRow(this)">X</button></td>
                   </tr>
                 </tbody>
@@ -166,9 +172,9 @@ description: "Submit your business details, menu items, or service catalog and b
                 </thead>
                 <tbody id="fitnessClassBody">
                   <tr>
-                    <td><input type="text" placeholder="Reformer Flow Level 1" class="className"></td>
-                    <td><input type="text" placeholder="Sarah Jenkins" class="classInstructor"></td>
-                    <td><input type="text" placeholder="09:00 AM" class="classTime"></td>
+                    <td><input type="text" name="fallback_class_name" placeholder="Reformer Flow Level 1" class="className"></td>
+                    <td><input type="text" name="fallback_class_instructor" placeholder="Sarah Jenkins" class="classInstructor"></td>
+                    <td><input type="text" name="fallback_class_time" placeholder="09:00 AM" class="classTime"></td>
                     <td style="text-align: center;"><button type="button" class="setup-remove-btn" onclick="removeRow(this)">X</button></td>
                   </tr>
                 </tbody>
