@@ -23,14 +23,19 @@ description: "Submit your business details, menu items, or service catalog and b
 
       <noscript>
         <div style="padding: 1rem; background: #374151; border: 1px solid #4b5563; border-radius: 6px; margin-bottom: 1.5rem; color: #f3f4f6;">
-          ⚠️ <strong>JavaScript Disabled:</strong> For the best interactive experience with dynamic catalog rows, please enable JavaScript. Standard form inputs will still submit normally.
+          ⚠️ <strong>JavaScript Disabled:</strong> Dynamic menu and service catalog builders require JavaScript. Core business and contact details submitted below will still be received by our team.
         </div>
       </noscript>
       
-      <!-- Success Banner matching your Contact Us style -->
+      <!-- Success Banner -->
       <div class="setup-success-message" id="successMessage" style="display: none;">
         <h3>Message Received Successfully!</h3>
         <p>Thank you for reaching out. Our engineering desk is reviewing your details and will deliver your custom prototype preview within 24 to 48 hours.</p>
+      </div>
+
+      <!-- Inline Error Banner (Fixes silent failure) -->
+      <div id="formErrorMessage" style="display: none; padding: 1rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; margin-bottom: 1.5rem; color: #f87171;">
+        ⚠️ There was a problem submitting your request. Please check your connection or email us directly at <a href="mailto:contact@swiftwebsync.com" style="color: #f87171; text-decoration: underline;">contact@swiftwebsync.com</a>.
       </div>
 
       <!-- Form with async submit handling & fallback action/method -->
@@ -186,7 +191,6 @@ description: "Submit your business details, menu items, or service catalog and b
             </div>
           </div>
 
-          <!-- Fixed raw markdown asterisks -->
           <div id="defaultInstruction" class="setup-default-instruction">
             👆 Please select your Industry Vertical in Section 1 above to unlock the customized menu or service builder.
           </div>
