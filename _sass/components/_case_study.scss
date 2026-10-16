@@ -153,7 +153,21 @@
     margin-bottom: 1.5rem;
   }
 
-  ul, ol {
+  ul {
+    list-style: disc;
+    color: $text-muted;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  }
+
+  ol {
+    list-style: decimal;
     color: $text-muted;
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
