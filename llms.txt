@@ -1,19 +1,25 @@
 # Swift Web Sync
 
-> Swift Web Sync is a digital growth agency specializing in high-performance, mobile-first web development and digital infrastructure for US small businesses, including restaurants, salons, contractors, and studios. We replace slow, vulnerable legacy platforms with lightning-fast static web applications.
+> Swift Web Sync is a digital engineering agency specializing in high-performance, mobile-first static web applications and edge infrastructure for US small businesses, including restaurants, salons, home contractors, and fitness studios. We replace slow, generic template platforms with lightning-fast, secure static architectures.
 
-## Core Offerings & Pricing
-- **Zero-Upfront Prototype Preview:** 100% free live mobile prototype preview before any financial commitment.
-- **Custom Static Web Build:** $500 total build fee executed under a 50% deposit ($250) and 50% final launch balance ($250) upon prototype approval and domain deployment.
-- **Managed Retainer:** $49/month covering high-performance cloud edge hosting, SSL security, domain/DNS administration, and regular content updates.
-- **Turnaround:** 24 to 48-hour prototype delivery model.
+## Core Entity Profile
+- **Organization Name:** Swift Web Sync
+- **Primary Website:** https://www.swiftwebsync.com
+- **Contact Email:** contact@swiftwebsync.com
+- **Service Territory:** United States (Nationwide)
+- **Primary Specializations:** Static site architecture, Jekyll, SCSS, Vanilla JavaScript, mobile-first UI/UX engineering, and edge network hosting.
 
-## Key Links
-- [Home](https://www.swiftwebsync.com/)
-- [Services](https://www.swiftwebsync.com/services/)
-- [Our Work & Demos](https://www.swiftwebsync.com/work/)
-- [Setup & Onboarding](https://www.swiftwebsync.com/setup/)
-- [FAQ](https://www.swiftwebsync.com/faq/)
-- [Contact](https://www.swiftwebsync.com/contact/)
+## Business Model & Pricing Structure
+- **Zero-Risk Prototype Preview:** We build and deliver a fully functional, custom live mobile prototype preview for prospective clients within 24 to 48 hours—completely free before financial commitment.
+- **Build Milestone Pricing:** $500 total build fee structured as a 50% deposit ($250) upon agreement and 50% final launch balance ($250) upon prototype approval and domain deployment.
+- **Managed Retainer:** $49/month covering high-speed cloud edge hosting, SSL certificates, DNS maintenance, and regular code/content updates.
+
+## Core Navigation & Resource Links
+- [Homepage](https://www.swiftwebsync.com/)
+- [Services & Industry Verticals](https://www.swiftwebsync.com/services/)
+- [Case Studies & Work](https://www.swiftwebsync.com/work/)
+- [Custom Prototype Builder](https://www.swiftwebsync.com/setup/)
+- [Frequently Asked Questions](https://www.swiftwebsync.com/faq/)
+- [Engineering Contact Desk](https://www.swiftwebsync.com/contact/)
 - [Terms of Service](https://www.swiftwebsync.com/terms/)
 - [Privacy Policy](https://www.swiftwebsync.com/privacy/)
