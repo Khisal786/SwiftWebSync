@@ -27,6 +27,11 @@ description: "Get in touch with Swift Web Sync to review your custom pre-built w
       <h2>Start Your Review</h2>
       <p style="margin-bottom: 1.5rem;">Give us a call, write an email, or fill out the form below to see your pre-built prototype.</p>
       
+      <!-- INLINE ERROR MESSAGE BANNER -->
+      <div id="formErrorMessage" style="display: none; padding: 1rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; margin-bottom: 1.5rem; color: #f87171; font-size: 0.95rem;">
+        ⚠️ There was a problem processing your request. Please review your details, check your connection, or email us directly at <a href="mailto:contact@swiftwebsync.com" style="color: #f87171; text-decoration: underline;">contact@swiftwebsync.com</a>.
+      </div>
+
       <!-- THE FORM -->
       <form id="ajaxContactForm" action="https://formspree.io/f/xeaozkwd" method="POST" class="contact-form">
         <input type="hidden" name="_subject" value="📩 New General Contact Inquiry - Swift Web Sync">
