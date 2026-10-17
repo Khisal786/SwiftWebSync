@@ -3,7 +3,7 @@
   description: "Frictionless mobile booking interface featuring stylist selection, real-time slot picking, and instant deposit checkout."
   image: "assets/images/demos/salon.webp"
   tech: "Jekyll / SCSS / JS"
-  status: "Ready to Deploy"
+  status: "Live Production"
   demo_url: "https://khisal786.github.io/Salon-Aura-Atelier-Salon/"
 
 - tag: "Home Trade & Contractors"
@@ -11,7 +11,7 @@
   image: "assets/images/demos/terraform-contractors.webp"
   description: "High-end portfolio layout engineered for high-ticket home contractors, featuring before-and-after project sliders and direct consultation intake."
   tech: "Jekyll / SCSS / JS"
-  status: "Ready to Deploy"
+  status: "Live Production"
   demo_url: "https://khisal786.github.io/Terraform-HomeContractors/"  
 
 - tag: "Boutique Fitness & Wellness"
@@ -19,7 +19,7 @@
   image: "assets/images/demos/pilates-studio.webp"
   description: "Bespoke studio layout featuring class schedule grids, instructor spotlit profiles, and frictionless mobile booking flows."
   tech: "Jekyll / SCSS / JS"
-  status: "Ready to Deploy"
+  status: "Live Production"
   demo_url: "https://khisal786.github.io/Pilates/"
 
 - tag: "Fast Food & Burgers"
@@ -27,7 +27,7 @@
   image: "assets/images/demos/smash-burger.webp"
   description: "Dark-mode immersive layout featuring sticky category filters, bento menu grids, and instant cart tracking."
   tech: "Jekyll / SCSS / JS"
-  status: "Ready to Deploy"
+  status: "Live Production"
   demo_url: "https://khisal786.github.io/CaliCrush-WhatsAppOrderTaking/"
 
 - tag: "Asian & Chinese Dining"
@@ -35,7 +35,7 @@
   image: "assets/images/demos/wok-kitchen.webp"
   description: "Optimized for multi-item meal customization, dietary badges, and high-speed mobile scrolling."
   tech: "Jekyll / SCSS / JS"
-  status: "Ready to Deploy"
+  status: "Live Production"
   demo_url: "https://khisal786.github.io/GoldenDragonBistro/"
 
 - tag: "Pizzeria & Italian"
@@ -43,5 +43,5 @@
   image: "assets/images/demos/pizza-crust.webp"
   description: "Features complex size-selection modals, crust add-ons, and automated WhatsApp order dispatching."
   tech: "Jekyll / SCSS / JS"
-  status: "Ready to Deploy"
+  status: "Live Production"
   demo_url: "https://khisal786.github.io/Slice-FireArtisanPizza/"
