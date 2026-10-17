@@ -1,0 +1,20 @@
+# Jekyll build output and cache directories
+_site/
+.sass-cache/
+.jekyll-metadata
+.jekyll-cache/
+
+# Node.js and Ruby dependency directories
+node_modules/
+vendor/
+.bundle/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and local secret configurations
+.env
+.env.local
+*.log
