@@ -36,9 +36,9 @@
     height: 32px;
     width: auto;
     object-fit: contain;
-    transform: scale(1.25); // Slightly dialed back from 1.35 to prevent severe overlap
+    transform: scale(1.25);
     transform-origin: left center;
-    margin-right: 0.35rem; // Pushes the text away to account for the visual scaling overflow!
+    margin-right: 0.35rem;
   }
 
   .logo-text {
@@ -54,7 +54,7 @@
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem; // Adjusted slightly to accommodate the extra links cleanly on standard desktop views
+  gap: 1.5rem;
 
   a {
     font-size: 0.9rem;
@@ -78,6 +78,22 @@
     &:hover {
       background-color: $accent-hover;
       color: #ffffff;
+    }
+  }
+}
+
+// Tablet Spacing Adjustments (Prevents link wrapping between 769px and 1100px)
+@media (min-width: 769px) and (max-width: 1100px) {
+  .site-nav {
+    gap: 0.85rem;
+
+    a {
+      font-size: 0.825rem;
+    }
+
+    .nav-cta-btn {
+      padding: 0.45rem 0.9rem;
+      font-size: 0.825rem;
     }
   }
 }
