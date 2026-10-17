@@ -10,9 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     const submitBtn = document.getElementById('submitBtn');
     const successMsg = document.getElementById('formSuccessMessage');
+    const errorMsg = document.getElementById('formErrorMessage');
     
+    // Reset error display
+    if (errorMsg) {
+      errorMsg.style.display = 'none';
+    }
+
     // Change button state to indicate loading
-    const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Send';
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Get a Quote →';
     if (submitBtn) {
       submitBtn.innerHTML = 'Transmitting...';
       submitBtn.disabled = true;
@@ -35,14 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         contactForm.reset();
       } else {
-        alert('There was a problem sending your message. Please email us directly at contact@swiftwebsync.com');
+        console.error('Contact form submission error:', response.status);
+        if (errorMsg) {
+          errorMsg.style.display = 'block';
+        }
         if (submitBtn) {
           submitBtn.innerHTML = originalBtnText;
           submitBtn.disabled = false;
         }
       }
     } catch (error) {
-      alert('Network error. Please check your connection or email us directly.');
+      console.error('Contact form network error:', error);
+      if (errorMsg) {
+        errorMsg.style.display = 'block';
+      }
       if (submitBtn) {
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
