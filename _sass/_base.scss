@@ -11,7 +11,7 @@
 html, body {
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden; // Air-tight safety lock against horizontal scroll traps
+  overflow-x: hidden; // Safety lock against horizontal scroll traps
 }
 
 html {
@@ -47,6 +47,23 @@ a {
   text-decoration: none;
 }
 
+// Inline Body Link Underlines (Visual Affordance for Content Links)
+p a, .content-area a, .privacy-content a, .faq-answer a {
+  color: $accent-color;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: lighten($accent-color, 10%);
+  }
+}
+
+// Ensure Button & Logo Link Resets Are Preserved
+.btn-primary, .btn-secondary, .nav-cta-btn, .logo-brand, .site-nav a, .card-overlay-link {
+  text-decoration: none;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -55,4 +72,22 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+// Reduced Motion User Preference Overrides
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pulse-ring, .pulse-dot {
+    animation: none !important;
+  }
 }
