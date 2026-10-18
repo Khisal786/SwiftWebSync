@@ -10,7 +10,7 @@
 ## Technical Architecture
 - **Infrastructure:** GitHub Pages Edge Hosting & Custom DNS Routing
 - **Framework:** Jekyll Static Site Generator (Markdown & SCSS)
-- **Performance:** 100/100 Lighthouse performance metrics, zero database overhead, mobile-first design.
+- **Performance:** Top-tier Lighthouse performance benchmarks, zero database overhead, mobile-first design.
 
 ## Business Model & Policies
 - **Risk-Free Prototype:** Free pre-built interactive mobile prototype link delivered in 24–48 hours for review before purchase.
