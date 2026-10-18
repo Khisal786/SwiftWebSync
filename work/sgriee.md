@@ -3,14 +3,14 @@ layout: case_study
 title: "Scaling Sgriee.com: Modern Corporate Architecture & Edge Deployment"
 description: "How we engineered a high-trust, responsive corporate digital footprint with modular SCSS, zero-latency static performance, and automated GitHub Actions pipelines."
 client_name: "Sgriee"
-primary_metric: "100% Mobile Responsiveness & Zero Downtime"
+primary_metric: "100% Mobile Responsiveness & Reliable Uptime"
 architecture_type: "Modular Static SCSS / GitHub Pages"
 live_url: "https://sgriee.com"
 permalink: /work/sgriee/
 ---
 
 ## The Operational Challenge
-In modern corporate branding, credibility is established within the first second of page load. Sgriee required a high-trust digital footprint that projected absolute technical precision, flawless typography scaling across viewport sizes, and zero latency. Traditional enterprise setups weighed down by heavy template builders or unoptimized server responses failed to meet their standards for mobile-first user experience.
+In modern corporate branding, credibility is established within the first second of page load. Sgriee required a high-trust digital footprint that projected absolute technical precision, flawless typography scaling across viewport sizes, and minimal latency. Traditional enterprise setups weighed down by heavy template builders or unoptimized server responses failed to meet their standards for mobile-first user experience.
 
 Corporate websites serve as a digital ambassador. When page rendering lags on mobile devices, client trust drops instantly.
 
@@ -24,5 +24,5 @@ We designed and deployed a bespoke static architecture engineered around strict 
 ## The Results & Strategic Impact
 The resulting production deployment transformed Sgriee's digital infrastructure:
 1. **Instant Edge Delivery:** Global asset distribution via GitHub Pages CDN eliminated server lag, ensuring fast response times across target regions.
-2. **Immaculate Mobile Experience:** Rigorous responsive testing across diverse viewport sizes guaranteed fluid navigation and zero layout shifts (CLS).
+2. **Optimized Mobile Experience:** Rigorous responsive testing across diverse viewport sizes guaranteed fluid navigation and visual stability.
 3. **Zero Maintenance Overhead:** Managed static architecture eliminated server runtime vulnerabilities and database maintenance overhead while ensuring reliable uptime.
