@@ -1,9 +1,9 @@
 ---
 layout: case_study
 title: "Scaling Mega Solutions UAE: High-Performance Technical Catalog Architecture"
-description: "How we migrated an industrial spare parts inventory to an ultra-fast static Jekyll engine, achieving top Core Web Vitals and instantaneous mobile indexing."
+description: "How we migrated an industrial spare parts inventory to a fast static Jekyll engine, optimizing Core Web Vitals and mobile crawl performance."
 client_name: "Mega Solutions UAE"
-primary_metric: "Top-Tier Core Web Vitals Performance"
+primary_metric: "Optimized Core Web Vitals Performance"
 architecture_type: "Jekyll Static / GitHub Pages"
 live_url: "https://megasolutionsuae.com"
 permalink: /work/megasolutionsuae/
@@ -23,6 +23,6 @@ We stripped away the database dependency completely and refactored the entire sy
 
 ## The Results & Traffic Impact
 By removing server overhead and enforcing strict mobile-first design constraints, the platform achieved immediate operational milestones:
-1. **Zero Server Latency:** Reduced server response bottlenecks globally via edge static file distribution.
-2. **Optimized Technical Audit Scores:** Achieved top-tier audit scores across Performance, Accessibility, and Best Practices.
+1. **Near-Zero Server Bottlenecks:** Reduced response bottlenecks globally via edge static file distribution.
+2. **Optimized Technical Audit Scores:** Achieved strong performance across Performance, Accessibility, and Best Practices.
 3. **Enhanced AI Discovery:** The addition of clean semantic hierarchy and custom `llms.txt` directives allowed generative search crawlers to index technical part listings immediately.
